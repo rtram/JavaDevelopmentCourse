@@ -33,6 +33,21 @@ public class Main {
         System.out.println(myLongValue);
         System.out.println(bigLongLiteralValue);
 
+        int myTotal = (myMinIntValue / 2);
 
+        byte myNew = (byte) (myMinByteValue / 2);
+
+        short myNewShortValue = (short) (myMinshortValue / 2);
+
+        // Primitive Types Challenge
+
+        byte myByteVariable = 5;
+        short myShortVariable = 3000;
+        int myIntVariable = 245678;
+        long myLongVar = 50000 + (10*(myByteVariable + myShortVariable + myIntVariable));
+
+        System.out.println(myLongVar);
+
+        short shortTotal = (short) (1000 + 10 * (myByteVariable + myShortVariable + myIntVariable));
     }
 }
