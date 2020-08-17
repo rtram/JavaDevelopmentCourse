@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="112ae024-140b-432b-8b21-191d8e32ca7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJobChallenge/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaintJobChallenge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PaintJobChallenge/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,9 +112,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597350448051" />
-    <state x="685" y="140" key="new project wizard" timestamp="1597350446530">
+    <state x="685" y="140" key="new project wizard" timestamp="1597673038158">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="685" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1597350446530" />
+    <state x="685" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1597673038158" />
   </component>
 </project>
