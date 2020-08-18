@@ -19,18 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7ef0879-fb9a-4584-ab7a-db5a238b7bdf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Constructors.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/VipCustomer.java" afterDir="false" />
-    </list>
+    <list default="true" id="a7ef0879-fb9a-4584-ab7a-db5a238b7bdf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +75,14 @@
       <option name="presentableId" value="Default" />
       <updated>1597676259940</updated>
     </task>
+    <task id="LOCAL-00001" summary="Constructor Lesson and Exercise">
+      <created>1597679498133</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597679498133</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +96,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Constructor Lesson and Exercise" />
+    <option name="LAST_COMMIT_MESSAGE" value="Constructor Lesson and Exercise" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1597679013537">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -108,21 +109,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1223" y="418" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1597677392627" />
-    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1597678666835">
+    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1597679519593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597678666835" />
-    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1597678666835">
+    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597679519593" />
+    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1597679519593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597678666835" />
-    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1597678666835">
+    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597679519593" />
+    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1597679519593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597678666835" />
-    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1597678666835">
+    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597679519593" />
+    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1597679519593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597678666835" />
+    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597679519593" />
+    <state x="685" y="144" key="new project wizard" timestamp="1597679518337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="685" y="144" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1597679518337" />
   </component>
 </project>
