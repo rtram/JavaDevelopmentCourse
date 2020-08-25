@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6dd34610-c5f3-4ac1-a330-eab33bd67d7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../PoolArea/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/PoolArea.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/src/com/company/Cuboid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PoolArea/src/com/company/Rectangle.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1gbA0KgHRwBove7Gm0SGKFCQj2T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PoolArea" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="Composition" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6dd34610-c5f3-4ac1-a330-eab33bd67d7a" name="Default Changelist" comment="" />
+      <created>1598372693310</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598372693310</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1598372738984">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598372738984" />
+  </component>
+</project>
