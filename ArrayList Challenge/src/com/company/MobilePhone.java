@@ -32,10 +32,15 @@ public class MobilePhone {
     }
 
     public void removeContact(int index) {
-        Contacts contactObj = addressBook.get(index);
-        String name = contactObj.getName();
-        addressBook.remove(index);
-        System.out.println(name + " has been removed from your address book.");
+        if(index >= 0 && index < addressBook.size()) {
+            Contacts contactObj = addressBook.get(index);
+            String name = contactObj.getName();
+            addressBook.remove(index);
+            System.out.println (name + " has been removed from your address book.");
+            return;
+        }
+        System.out.println("Please enter a number next to a contact.");
+        return;
     }
 
     public int getIndex(String search) {
@@ -45,6 +50,21 @@ public class MobilePhone {
                 return i;
             }
         }
+        return -1;
+    }
+
+    private int findContact(Contacts contact) {
+        return this.addressBook.indexOf(contact);
+    }
+
+    private int findContact(String contactName) {
+        for(int i = 0; i<this.addressBook.size(); i++) {
+            Contacts contact = this.addressBook.get(i);
+            if(contact.getName().equalsIgnoreCase(contactName)) {
+                return i;
+            }
+        }
+
         return -1;
     }
 }
