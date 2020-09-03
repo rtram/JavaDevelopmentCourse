@@ -4,6 +4,19 @@ import java.util.ArrayList;
 
 class Bank {
     ArrayList<Branch> branches = new ArrayList<Branch>();
+    private String name;
+
+    public Bank(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<Branch> getBranches() {
+        return branches;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public void addNewBranch(String name) {
         Branch newBranch = new Branch(name);
@@ -125,6 +138,13 @@ class Customer {
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	    Bank wellsFargo = new Bank("Wells Fargo");
+
+	    wellsFargo.addNewBranch("Fairfax");
+
+	    wellsFargo.addNewCustomer("Fairfax", "Robin Tram", 19.99);
+
+	    wellsFargo.listBranchCustomers("Fairfax");
+	    wellsFargo.listBranchCustomers("Fairfax", true);
     }
 }
