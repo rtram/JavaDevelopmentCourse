@@ -51,7 +51,7 @@ class Bank {
             System.out.println("Customer List for " + this.name + " " + branchName + " Branch");
             for(int i = 0; i < customerList.size(); i++) {
                 Customer branchCustomer = customerList.get(i);
-                System.out.println("Customer " + branchCustomer.getName() + " Transaction Details");
+                System.out.println("Customer: " + branchCustomer.getName());
                 if(showTransactions) {
                     ArrayList<Double> customerTransaction = branchCustomer.getTransactions();
                     for(int j = 0; j < customerTransaction.size(); j++) {
@@ -155,6 +155,9 @@ public class Main {
 	    wellsFargo.addNewBranch("Fairfax");
 
 	    wellsFargo.addNewCustomer("Fairfax", "Robin Tram", 19.99);
+        wellsFargo.addNewCustomer("Fairfax", "Mike", 50.00);
+        wellsFargo.addNewCustomer("Fairfax", "Peter", 34.00);
+
 
 	    wellsFargo.listBranchCustomers("Fairfax", true);
     }
