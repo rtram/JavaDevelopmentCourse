@@ -18,38 +18,47 @@ class Bank {
         return name;
     }
 
-    public void addNewBranch(String name) {
-        Branch newBranch = new Branch(name);
-        branches.add(newBranch);
+    public boolean addNewBranch(String name) {
+        if(findBranch(name) == null) {
+            Branch newBranch = new Branch(name);
+            branches.add(newBranch);
+            return true;
+        }
+        return false;
     }
 
-    public void addNewCustomer(String branchName, String customerName, double initTransaction) {
+    public boolean addNewCustomer(String branchName, String customerName, double initTransaction) {
         Branch foundBranch = findBranch(branchName);
-
-        foundBranch.addNewCustomer(customerName, initTransaction);
+        if(foundBranch != null) {
+            foundBranch.addNewCustomer(customerName, initTransaction);
+            return true;
+        }
+        return false;
     }
 
-    public void addTransaction(String branchName, String customerName, double transaction) {
+    public boolean addTransaction(String branchName, String customerName, double transaction) {
         Branch foundBranch = findBranch(branchName);
-
-        foundBranch.addNewCustomer(customerName, transaction);
-    }
-
-    public void listBranchCustomers(String branchName) {
-        ArrayList<Customer> customerList = retrieveBranchCustomerList(branchName);
-
-        customerList.forEach((customer) -> System.out.println(customer.getName()));
+        if(foundBranch != null) {
+            return foundBranch.addCustomerTransactions(customerName, transaction);
+        }
+        return false;
     }
 
     public void listBranchCustomers(String branchName, boolean showTransactions) {
-        if(showTransactions) {
+        Branch branch = findBranch(branchName);
+        if(branch != null) {
             ArrayList<Customer> customerList = retrieveBranchCustomerList(branchName);
-
+            System.out.println("Customer List for " + this.name + " " + branchName + " Branch");
             for(int i = 0; i < customerList.size(); i++) {
-                Customer customer = customerList.get(i);
-                customer.getTransactions().forEach((transaction) -> System.out.println(transaction));
+                Customer branchCustomer = customerList.get(i);
+                System.out.println("Customer " + branchCustomer.getName() + " Transaction Details");
+                if(showTransactions) {
+                    ArrayList<Double> customerTransaction = branchCustomer.getTransactions();
+                    for(int j = 0; j < customerTransaction.size(); j++) {
+                        System.out.println("[" + (j+1) + "] Amount: " + customerTransaction.get(j));
+                    }
+                }
             }
-
         }
     }
 
@@ -87,29 +96,32 @@ class Branch {
         return name;
     }
 
-    public void addNewCustomer(String customerName, double initTransaction) {
-        Customer newCustomer = new Customer(customerName, initTransaction);
-        customers.add(newCustomer);
+    public boolean addNewCustomer(String customerName, double initTransaction) {
+        if(findCustomer(customerName) == null) {
+            Customer newCustomer = new Customer(customerName, initTransaction);
+            customers.add(newCustomer);
+            return true;
+        }
+        return false;
     }
 
-    public void addCustomerTransactions(String name, double transaction) {
-        Customer foundCustomer = findCustomer(name);
-
-        foundCustomer.addTransaction(transaction);
+    public boolean addCustomerTransactions(String customerName, double transaction) {
+        Customer existingCustomer = findCustomer(customerName);
+        if(existingCustomer != null) {
+            existingCustomer.addTransaction(transaction);
+            return true;
+        }
+        return false;
     }
 
     private Customer findCustomer(String name) {
-        Customer foundCustomer = null;
-
         for(int i = 0; i < customers.size(); i++) {
             Customer customer = customers.get(i);
             if(customer.getName().equalsIgnoreCase(name)) {
-                foundCustomer = customer;
-                break;
+                return customer;
             }
         }
-
-        return foundCustomer;
+        return null;
     }
 }
 
@@ -144,7 +156,6 @@ public class Main {
 
 	    wellsFargo.addNewCustomer("Fairfax", "Robin Tram", 19.99);
 
-	    wellsFargo.listBranchCustomers("Fairfax");
 	    wellsFargo.listBranchCustomers("Fairfax", true);
     }
 }
