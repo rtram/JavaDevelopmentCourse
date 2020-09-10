@@ -5,7 +5,11 @@ import java.util.LinkedList;
 
 public class Spotify {
     private ArrayList<Album> albums = new ArrayList<Album>();
-    private LinkedList<Song> playlist;
+    private LinkedList<Song> playlist = new LinkedList<>();
+
+    public void listPlaylist() {
+        System.out.println(playlist.getFirst().getTitle());
+    }
 
     public void listAllAlbumTitles() {
         for (int i = 0; i < albums.size(); i++) {
@@ -24,6 +28,10 @@ public class Spotify {
 
     public Album findAlbumByIndex(int selection) {
         return albums.get((selection - 1));
+    }
+
+    public boolean addSongToPlaylist(Song song) {
+        return playlist.add(song);
     }
 
     private boolean findAlbum(String albumTitle) {

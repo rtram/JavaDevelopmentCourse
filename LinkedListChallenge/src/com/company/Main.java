@@ -25,26 +25,29 @@ public class Main {
                 case 1:
                     albumsMainMenu(scanner, spotify);
                     break;
+                case 2:
+                    spotify.listPlaylist();
+                    break;
             }
         }
     }
 
     public static void albumsMainMenu(Scanner scanner, Spotify spotify) {
-        boolean quitAlbumMainMenu = false;
+        boolean quit = false;
 
-        while(!quitAlbumMainMenu) {
+        while(!quit) {
             printAlbumsMainMenu(spotify);
-            int albumChoice = scanner.nextInt();
+            int choice = scanner.nextInt();
             scanner.nextLine();
 
-            switch (albumChoice) {
+            switch (choice) {
                 case 0:
-                    quitAlbumMainMenu = true;
+                    quit = true;
                     break;
                 default:
-                    Album selectedAlbum = spotify.findAlbumByIndex(albumChoice);
+                    Album selectedAlbum = spotify.findAlbumByIndex(choice);
                     if(selectedAlbum != null) {
-                        albumMenu(scanner, selectedAlbum);
+                        albumMenu(scanner, selectedAlbum, spotify);
                     } else {
                         System.out.println("Invalid choice please try again.");
                     }
@@ -53,8 +56,28 @@ public class Main {
         }
     }
 
-    public static void albumMenu(Scanner scanner, Album selectedAlbum) {
-        System.out.println("You have a selected an Album");
+    public static void albumMenu(Scanner scanner, Album selectedAlbum, Spotify spotify) {
+        boolean quit = false;
+
+        while(!quit) {
+            printAlbumMenu(selectedAlbum);
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 0:
+                    quit = true;
+                    break;
+                default:
+                    Song selectedSong = selectedAlbum.findSongByIndex(choice);
+                    if(selectedSong != null) {
+                        spotify.addSongToPlaylist(selectedSong);
+                    } else {
+                        System.out.println("Invalid choice please try again");
+                    }
+                    break;
+            }
+        }
     }
 
     public static void printPlaylistMenu() {
@@ -77,6 +100,15 @@ public class Main {
         System.out.println("----------------------------");
         System.out.println("0. Return to Main Menu");
         spotify.listAllAlbumTitles();
+        System.out.println("----------------------------");
+    }
+
+    public static void printAlbumMenu(Album selectedAlbum) {
+        System.out.println("You have a selected " + selectedAlbum.getTitle() + "!");
+        System.out.println("Select a song to add to your playlist.");
+        System.out.println("----------------------------");
+        System.out.println("0. Return to Albums Menu");
+        selectedAlbum.listSongs();
         System.out.println("----------------------------");
     }
 

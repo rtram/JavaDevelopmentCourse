@@ -26,10 +26,14 @@ public class Album {
         return false;
     }
 
+    public Song findSongByIndex(int selection) {
+        return songs.get((selection - 1));
+    }
+
     public void listSongs() {
         for(int i = 0; i < songs.size(); i++) {
             Song currentSong = songs.get(i);
-            System.out.println((i+0) + ". " + currentSong.getTitle() + " - " + currentSong.getDuration());
+            System.out.println((i+1) + ". " + currentSong.getTitle() + " - " + currentSong.getDuration());
         }
     }
 
