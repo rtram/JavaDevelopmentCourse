@@ -21,16 +21,49 @@ public class Main {
                 case 0:
                     quit = true;
                     System.out.println("Goodbye!");
+                    break;
                 case 1:
-                    albumsMenu(scanner, spotify);
-
+                    albumsMainMenu(scanner, spotify);
+                    break;
             }
         }
     }
 
+    public static void albumsMainMenu(Scanner scanner, Spotify spotify) {
+        boolean quitAlbumMainMenu = false;
+
+        while(!quitAlbumMainMenu) {
+            printAlbumsMainMenu(spotify);
+            int albumChoice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (albumChoice) {
+                case 0:
+                    quitAlbumMainMenu = true;
+                    break;
+                default:
+                    Album selectedAlbum = spotify.findAlbumByIndex(albumChoice);
+                    if(selectedAlbum != null) {
+                        albumMenu(scanner, selectedAlbum);
+                    } else {
+                        System.out.println("Invalid choice please try again.");
+                    }
+                    break;
+            }
+        }
+    }
+
+    public static void albumMenu(Scanner scanner, Album selectedAlbum) {
+        System.out.println("You have a selected an Album");
+    }
+
+    public static void printPlaylistMenu() {
+
+    }
+
     public static void printMainMenu() {
         System.out.println("Welcome to Spotify!");
-        System.out.println("Please enter the number next to the option you would like and press enter.");
+        System.out.println("Please enter the number next to the option you want and press enter.");
         System.out.println("----------------------------");
         System.out.println("0. Quit");
         System.out.println("1. Browse Albums");
@@ -38,24 +71,16 @@ public class Main {
         System.out.println("----------------------------");
     }
 
-    public static void albumsMenu(Scanner scanner, Spotify spotify) {
-        boolean quit = false;
-
-        while(!quit) {
-            printAlbumsMenu();
-        }
-    }
-
-    public static void printAlbumsMenu() {
+    public static void printAlbumsMainMenu(Spotify spotify) {
         System.out.println("Albums Menu");
-        System.out.println("");
+        System.out.println("Please enter the number next to the album you want to browse and press enter");
+        System.out.println("----------------------------");
+        System.out.println("0. Return to Main Menu");
+        spotify.listAllAlbumTitles();
+        System.out.println("----------------------------");
     }
 
-    public static void printPlaylistMenu() {
-
-    }
-
-    public static boolean seedData(Spotify spotify) {
+    public static void seedData(Spotify spotify) {
         Album detroit2 = new Album("Detroit 2");
         Song whywouldistop = new Song("Why Would I Stop?", "2:32");
         Song luckyMe = new Song("Lucky Me", "4:08");
