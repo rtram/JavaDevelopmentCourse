@@ -125,9 +125,16 @@ public class Main {
                     }
                     break;
                 case 9:
-                    System.out.println(playlistIterator.previous().getTitle() + " has been removed from your playlist.");
-                    playlistIterator.remove();
-                    break;
+                    if (spotify.getPlaylist().size() > 0) {
+                        playlistIterator.remove();
+                        if(playlistIterator.hasNext()) {
+                            System.out.println("Now Playing " + playlistIterator.next().getTitle());
+                        } else if(playlistIterator.hasPrevious()) {
+                            System.out.println("Now Playing " + playlistIterator.previous().getTitle());
+                        }
+                        break;
+
+                    }
             }
         }
     }
