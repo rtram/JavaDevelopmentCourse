@@ -1,6 +1,8 @@
 package com.company;
 
 import java.sql.SQLOutput;
+import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Main {
@@ -26,7 +28,7 @@ public class Main {
                     albumsMainMenu(scanner, spotify);
                     break;
                 case 2:
-                    spotify.listPlaylist();
+                    printPlaylistMenu(scanner, spotify);
                     break;
             }
         }
@@ -80,11 +82,69 @@ public class Main {
         }
     }
 
-    public static void printPlaylistMenu() {
+    public static void printPlaylistMenu(Scanner scanner, Spotify spotify) {
+        boolean back = false;
+        boolean goingForward = true;
+        ListIterator<Song> playlistIterator = spotify.getPlaylist().listIterator();
 
+        spotify.listPlaylist();
+        playlistOptions();
+
+        while(!back) {
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 0:
+                    back = true;
+                    break;
+                case 1:
+                    if(!goingForward) {
+                        if(playlistIterator.hasNext()) {
+                            playlistIterator.next();
+                        }
+                        goingForward = true;
+                    }
+                    if(playlistIterator.hasNext()) {
+                        System.out.println("Now Playing " + playlistIterator.next().getTitle());
+                    } else {
+                        System.out.println("Reached the end of your playlist.");
+                    }
+                    break;
+                case 2:
+                    if(goingForward) {
+                        if(playlistIterator.hasPrevious()) {
+                            playlistIterator.previous();
+                        }
+                        goingForward = false;
+                    }
+                    if(playlistIterator.hasPrevious()) {
+                        System.out.println("Now Playing " + playlistIterator.previous().getTitle());
+                    } else {
+                        System.out.println("Reached the beginning of your playlist.");
+                    }
+                    break;
+                case 9:
+                    System.out.println(playlistIterator.previous().getTitle() + " has been removed from your playlist.");
+                    playlistIterator.remove();
+                    break;
+            }
+        }
+    }
+
+    public static void playlistOptions() {
+        System.out.println("----------------------------");
+        System.out.println("Please enter number next to the option you want and press enter");
+        System.out.println("----------------------------");
+        System.out.println("0. Quit");
+        System.out.println("1. Next Song");
+        System.out.println("2. Previous Song");
+        System.out.println("9. Remove current song from your playlist");
+        System.out.println("----------------------------");
     }
 
     public static void printMainMenu() {
+        System.out.println("----------------------------");
         System.out.println("Welcome to Spotify!");
         System.out.println("Please enter the number next to the option you want and press enter.");
         System.out.println("----------------------------");
@@ -95,6 +155,7 @@ public class Main {
     }
 
     public static void printAlbumsMainMenu(Spotify spotify) {
+        System.out.println("----------------------------");
         System.out.println("Albums Menu");
         System.out.println("Please enter the number next to the album you want to browse and press enter");
         System.out.println("----------------------------");
@@ -104,6 +165,7 @@ public class Main {
     }
 
     public static void printAlbumMenu(Album selectedAlbum) {
+        System.out.println("----------------------------");
         System.out.println("You have a selected " + selectedAlbum.getTitle() + "!");
         System.out.println("Select a song to add to your playlist.");
         System.out.println("----------------------------");

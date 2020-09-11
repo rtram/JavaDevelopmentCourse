@@ -1,14 +1,25 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Spotify {
     private ArrayList<Album> albums = new ArrayList<Album>();
-    private LinkedList<Song> playlist = new LinkedList<>();
+    private LinkedList<Song> playlist = new LinkedList<Song>();
+
+    public ArrayList<Album> getAlbums() {
+        return albums;
+    }
+
+    public LinkedList<Song> getPlaylist() {
+        return playlist;
+    }
 
     public void listPlaylist() {
-        System.out.println(playlist.getFirst().getTitle());
+        for (Iterator<Song> i = playlist.iterator(); i.hasNext();) {
+            System.out.println(i.next().getTitle());
+        }
     }
 
     public void listAllAlbumTitles() {
@@ -31,7 +42,22 @@ public class Spotify {
     }
 
     public boolean addSongToPlaylist(Song song) {
-        return playlist.add(song);
+        if (!isSongInPlaylist(song)) {
+            return playlist.add(song);
+        }
+        return false;
+    }
+
+    private boolean isSongInPlaylist(Song song) {
+        boolean isFound = false;
+        for (Iterator<Song> i = playlist.iterator(); i.hasNext();) {
+            Song currentSong = i.next();
+            if (currentSong.getTitle() == song.getTitle()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private boolean findAlbum(String albumTitle) {
