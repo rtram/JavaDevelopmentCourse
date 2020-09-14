@@ -14,8 +14,13 @@ public class Main {
         System.out.println(robin);
         robin.setWeapon("Wand");
         saveObject(robin);
-        loadObject(robin);
+//        loadObject(robin);
         System.out.println(robin);
+
+        ISaveable werewolf = new Monster("Werewolf", 1000, 40);
+        System.out.println(werewolf);
+        saveObject(werewolf);
+
     }
 
     public static ArrayList<String> readValues() {
