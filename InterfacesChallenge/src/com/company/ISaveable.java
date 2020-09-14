@@ -1,6 +1,9 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public interface ISaveable {
-    void input();
-    void output();
+    List<String> write();
+    void read(List<String> savedValues);
 }

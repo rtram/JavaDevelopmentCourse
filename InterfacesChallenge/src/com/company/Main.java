@@ -6,11 +6,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-    }
+	    Player robin = new Player("Robin", 100, 10);
+        System.out.println(robin.toString());
+        saveObject(robin);
 
-    public static void tbd(Object object) {
-
+        robin.setHitPoints(200);
+        System.out.println(robin);
+        robin.setWeapon("Wand");
+        saveObject(robin);
+        loadObject(robin);
+        System.out.println(robin);
     }
 
     public static ArrayList<String> readValues() {
@@ -41,5 +46,16 @@ public class Main {
             }
         }
         return values;
+    }
+
+    public static void saveObject(ISaveable objectToSave) {
+        for(int i = 0; i < objectToSave.write().size(); i++) {
+            System.out.println("Saving " + objectToSave.write().get(i) + " to storage device");
+        }
+    }
+
+    public static void loadObject(ISaveable objectToLoad) {
+        ArrayList<String> values = readValues();
+        objectToLoad.read(values);
     }
 }
